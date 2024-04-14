@@ -1844,6 +1844,10 @@ const dreamTool = () =>
 						x += snap(evn.x, 0, 64);
 						y += snap(evn.y, 0, 64);
 					}
+					else {
+						x += snap(evn.x, 0, 8);
+						y += snap(evn.y, 0, 8);
+					}
 
 					state.erasePrevCursor = _tool._cursor_draw(x, y);
 
@@ -2579,6 +2583,10 @@ const img2imgTool = () =>
 					if (state.snapToGrid) {
 						x += snap(evn.x, 0, 64);
 						y += snap(evn.y, 0, 64);
+					}
+					else {
+						x += snap(evn.x, 0, 8);
+						y += snap(evn.y, 0, 8);
 					}
 
 					state.erasePrevCursor = _tool._cursor_draw(x, y);

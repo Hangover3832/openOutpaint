@@ -210,8 +210,8 @@ const _tool = {
 			 * @param {Point} evn Drag start event
 			 */
 			dragstartcb(evn) {
-				const x = state.snapToGrid ? evn.ix + snap(evn.ix, 0, 64) : evn.ix;
-				const y = state.snapToGrid ? evn.iy + snap(evn.iy, 0, 64) : evn.iy;
+				const x = state.snapToGrid ? evn.ix + snap(evn.ix, 0, 64) : evn.ix + snap(evn.ix, 0, 8);
+				const y = state.snapToGrid ? evn.iy + snap(evn.iy, 0, 64) : evn.iy + snap(evn.iy, 0, 8);
 				this._selected = {start: {x, y}, now: {x, y}};
 				this._dirty_bb = true;
 			},
@@ -221,8 +221,8 @@ const _tool = {
 			 * @param {Point} evn Drag event
 			 */
 			dragcb(evn) {
-				const x = state.snapToGrid ? evn.x + snap(evn.x, 0, 64) : evn.x;
-				const y = state.snapToGrid ? evn.y + snap(evn.y, 0, 64) : evn.y;
+				const x = state.snapToGrid ? evn.x + snap(evn.x, 0, 64) : evn.x + snap(evn.x, 0, 8);
+				const y = state.snapToGrid ? evn.y + snap(evn.y, 0, 64) : evn.y + snap(evn.y, 0, 8);
 
 				if (x !== this._selected.now.x || y !== this._selected.now.y) {
 					this._selected.now = {x, y};
@@ -235,8 +235,8 @@ const _tool = {
 			 * @param {Point} evn Drag end event
 			 */
 			dragendcb(evn) {
-				const x = state.snapToGrid ? evn.x + snap(evn.x, 0, 64) : evn.x;
-				const y = state.snapToGrid ? evn.y + snap(evn.y, 0, 64) : evn.y;
+				const x = state.snapToGrid ? evn.x + snap(evn.x, 0, 64) : evn.x + snap(evn.x, 0, 8);
+				const y = state.snapToGrid ? evn.y + snap(evn.y, 0, 64) : evn.y + snap(evn.y, 0, 8);
 
 				this._selected.now = {x, y};
 				this._dirty_bb = true;
