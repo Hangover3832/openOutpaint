@@ -289,6 +289,11 @@ const _tool = {
 			sx += snap(x, 0, config.gridSize);
 			sy += snap(y, 0, config.gridSize);
 		}
+		else
+		{
+			sx += snap(x, 0, 8);
+			sy += snap(y, 0, 8);
+		}
 
 		const vpc = viewport.canvasToView(x, y);
 		const vpsc = viewport.canvasToView(sx, sy);
